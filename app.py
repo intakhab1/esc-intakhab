@@ -1,11 +1,20 @@
 import streamlit as st
 import pickle
 import string
+from PIL import Image
 from nltk.corpus import stopwords
 import nltk
 from nltk.stem.porter import PorterStemmer
 
 ps = PorterStemmer()
+
+    img1 = Image.open('./images/spam.png')
+    img1 = img1.resize((470,325))
+    st.image(img1,use_column_width=False)
+
+Intakhab = f'<a href="https://github.com/intakhab1/esc-intakhab">Developed by @Intakhab</a>'
+st.markdown(Intakhab, unsafe_allow_html=True)
+
 
 
 def transform_text(text):
