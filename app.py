@@ -8,14 +8,9 @@ from nltk.stem.porter import PorterStemmer
 
 ps = PorterStemmer()
 
-    img1 = Image.open('./images/spam.png')
-    img1 = img1.resize((470,325))
-    st.image(img1,use_column_width=False)
-
-Intakhab = f'<a href="https://github.com/intakhab1/esc-intakhab">Developed by @Intakhab</a>'
-st.markdown(Intakhab, unsafe_allow_html=True)
-
-
+img1 = Image.open('./images/spam.png')
+img1 = img1.resize((470,325))
+st.image(img1,use_column_width=False)
 
 def transform_text(text):
     text = text.lower()
@@ -45,6 +40,8 @@ tfidf = pickle.load(open('vectorizer.pkl','rb'))
 model = pickle.load(open('model.pkl','rb'))
 
 st.title(" Welcome To Email/SMS Spam Classifier")
+Intakhab = f'<a href="https://github.com/intakhab1/esc-intakhab">Developed by @Intakhab</a>'
+st.markdown(Intakhab, unsafe_allow_html=True)
 
 input_sms = st.text_area("Enter the message")
 
